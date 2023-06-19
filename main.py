@@ -4,9 +4,10 @@ import requests
 import json
 import random
 import re
+from decouple import config
 
-token = os.environ['DISCORD_AUTH_TOKEN']
-
+# token = os.environ['DISCORD_AUTH_TOKEN']
+token = config('DISCORD_AUTH_TOKEN')
 
 def extract_author_name(message):
   pattern = r"name='(.*?)'"
